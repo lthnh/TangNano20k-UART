@@ -2,11 +2,12 @@
 module tb_uart_loop;
   localparam integer BIT_TIME = 15000; // 7500 sys_clk periods at 9600 baud.
   logic sys_clk = 0;
-  logic rst_n = 1, en = 0, rx = 1;
+  logic rx = 1;
   wire tx, err;
   integer received = 0;
   logic [7:0] value;
-  uart_loop dut(.*);
+  uart_loop dut(.sys_clk(sys_clk), .rx(rx), .tx(tx));
+  assign err = dut.err;
   always #1 sys_clk = ~sys_clk;
 
   task automatic send_frame(input logic [7:0] data, input logic bad_stop = 0);
@@ -38,11 +39,8 @@ module tb_uart_loop;
   end
 
   initial begin
-    #2;
-    rst_n = 0;
-    #10;
-    rst_n = 1;
-    en = 1;
+    wait (dut.rst_n === 1'b0);
+    wait (dut.rst_n === 1'b1);
     #(BIT_TIME * 5 + 7);
     send_frame(8'h96);
     wait (received == 1);

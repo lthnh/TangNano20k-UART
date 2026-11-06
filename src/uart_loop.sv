@@ -1,13 +1,21 @@
 module uart_loop
 (
   input logic sys_clk,
-  input logic rst_n,
   input logic rx,
-  input logic en,
-  output logic err,
   output logic tx
 );
   import uart_pkg::*;
+
+  wire en = 1'b1;
+  logic rst_n = 1'b1;
+  logic reset_pending = 1'b1;
+  logic err;
+
+  // Assert reset on the first system-clock edge and release on the next.
+  always_ff @(posedge sys_clk) begin
+    rst_n <= !reset_pending;
+    reset_pending <= 1'b0;
+  end
 
   loop_state_e curr_state;
   logic finish_meta, finish_sync;
