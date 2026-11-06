@@ -1,8 +1,9 @@
 package uart_pkg;
   typedef enum {NONE, ODD, EVEN} parity_bit_e;
-  typedef enum {RX_IDLE, RX_START, RX_DATA, RX_PARITY, RX_STOP} rx_state_e;
-  typedef enum {TX_IDLE, TX_START, TX_SEND} tx_state_e;
-  typedef enum {LOOP_IDLE, LOOP_START, LOOP_RECEIVED, LOOP_SEND} loop_state_e;
+  typedef enum {RX_IDLE, RX_DATA, RX_PARITY, RX_STOP} rx_state_e;
+  typedef enum {TX_IDLE, TX_SEND} tx_state_e;
+  typedef enum {LOOP_IDLE, LOOP_START, LOOP_RECEIVE,
+                LOOP_TX_ACCEPT, LOOP_SEND} loop_state_e;
   parameter int unsigned DATA_WIDTH = 8;
   parameter parity_bit_e PARITY_BIT = NONE;
   parameter int unsigned STOP_WIDTH = 1;
@@ -15,9 +16,10 @@ package uart_pkg;
 
   function automatic logic calc_parity
   (
+    parity_bit_e PARITY_BIT_CFG,
     input logic [7:0] data
   );
-    case (PARITY_BIT)
+    case (PARITY_BIT_CFG)
       NONE:    return 'Z;
       EVEN:    return ^data;
       ODD:     return ~^data;

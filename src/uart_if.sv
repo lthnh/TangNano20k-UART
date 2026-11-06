@@ -12,8 +12,10 @@ interface uart_if;
   logic rx;
   logic rx_err;
   logic [7:0] rx_data;
-  logic rx_start;
+  logic rx_en;
   logic rx_finish;
+  logic rx_ack;
+  logic rx_overrun;
 
   modport clk_mp
   (
@@ -29,6 +31,7 @@ interface uart_if;
     input rst_n,
     input tx_start,
     input tx_data,
+    output tx_finish,
     output tx
   );
 
@@ -36,10 +39,12 @@ interface uart_if;
   (
     input rx_clk,
     input rst_n,
-    input rx_start,
+    input rx_en,
+    input rx_ack,
     input rx,
     output rx_err,
     output rx_finish,
+    output rx_overrun,
     output rx_data
   );
 endinterface
