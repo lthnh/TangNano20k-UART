@@ -8,7 +8,7 @@ package uart_pkg;
   localparam parity_bit_e PARITY_BIT = NONE;
   localparam int unsigned STOP_WIDTH = 1;
   localparam int unsigned BAUD_RATE = 9600;
-  localparam int unsigned XTAL_FREQ = 72_000_000;
+  localparam int unsigned XTAL_FREQ = 27_000_000;
   localparam int unsigned OVERSAMPLING_RATE = 16;
   localparam logic START_SIG = '0;
   localparam logic STOP_SIG = '1;

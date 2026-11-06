@@ -9,7 +9,7 @@
   "SubInsts" : [
    {
     "InstFile" : "D:/projects/TangNano20k-UART/src/uart_loop.sv",
-    "InstLine" : 23,
+    "InstLine" : 31,
     "InstName" : "uart_clk",
     "ModuleFile" : "D:/projects/TangNano20k-UART/src/uart_clk.sv",
     "ModuleLine" : 1,
@@ -17,7 +17,7 @@
    },
    {
     "InstFile" : "D:/projects/TangNano20k-UART/src/uart_loop.sv",
-    "InstLine" : 33,
+    "InstLine" : 41,
     "InstName" : "uart_rx",
     "ModuleFile" : "D:/projects/TangNano20k-UART/src/uart_rx.sv",
     "ModuleLine" : 1,
@@ -25,7 +25,7 @@
    },
    {
     "InstFile" : "D:/projects/TangNano20k-UART/src/uart_loop.sv",
-    "InstLine" : 42,
+    "InstLine" : 50,
     "InstName" : "uart_tx",
     "ModuleFile" : "D:/projects/TangNano20k-UART/src/uart_tx.sv",
     "ModuleLine" : 1,

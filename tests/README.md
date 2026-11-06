@@ -20,8 +20,12 @@ synchronized into their receiving clock domains.
 Reception continues while a result is pending. If another frame completes
 before the mailbox is free, RX preserves the older result, drops the newest
 frame, and raises `rx_overrun`. This flag remains high until RX is disabled or
-reset. The top-level `err` records frame errors and overruns until reset or
-disable. This is bounded buffering, not a FIFO or sender flow control.
+reset. The internal `err` records frame errors and overruns until reset.
+The top-level ports are `sys_clk`, `rx`, and `tx`; internal `en` is tied
+high. Internal `rst_n` asserts on the first system-clock edge and releases
+on the next. The loop test waits for this startup reset and observes internal `err`
+hierarchically.
+This is bounded buffering, not a FIFO or sender flow control.
 
 These simulations check RTL behavior; FPGA synthesis, timing constraints, and
 hardware operation require separate validation.
