@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="uart_loop" Register="18" Lut="10" T_Register="135(18)" T_Lut="246(10)">
- <SubModule name="uart_clk" Register="24" Lut="40" T_Register="24(24)" T_Lut="40(40)"/>
- <SubModule name="uart_rx" Register="75" Lut="173" T_Register="75(75)" T_Lut="173(173)"/>
+<Module name="uart_loop" Register="18" Lut="10" T_Register="133(18)" T_Lut="233(10)">
+ <SubModule name="uart_clk" Register="22" Lut="35" T_Register="22(22)" T_Lut="35(35)"/>
+ <SubModule name="uart_rx" Register="75" Lut="165" T_Register="75(75)" T_Lut="165(165)"/>
  <SubModule name="uart_tx" Register="18" Lut="23" T_Register="18(18)" T_Lut="23(23)"/>
 </Module>
