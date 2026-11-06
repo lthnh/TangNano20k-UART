@@ -4,15 +4,15 @@ package uart_pkg;
   typedef enum {TX_IDLE, TX_SEND} tx_state_e;
   typedef enum {LOOP_IDLE, LOOP_START, LOOP_RECEIVE,
                 LOOP_TX_ACCEPT, LOOP_SEND} loop_state_e;
-  parameter int unsigned DATA_WIDTH = 8;
-  parameter parity_bit_e PARITY_BIT = NONE;
-  parameter int unsigned STOP_WIDTH = 1;
-  parameter int unsigned BAUD_RATE = 9600;
-  parameter int unsigned XTAL_FREQ = 72e6;
-  parameter int unsigned OVERSAMPLING_RATE = 16;
-  parameter logic START_SIG = '0;
-  parameter logic STOP_SIG = '1;
-  parameter logic IDLE_SIG = '1;
+  localparam int unsigned DATA_WIDTH = 8;
+  localparam parity_bit_e PARITY_BIT = NONE;
+  localparam int unsigned STOP_WIDTH = 1;
+  localparam int unsigned BAUD_RATE = 9600;
+  localparam int unsigned XTAL_FREQ = 72_000_000;
+  localparam int unsigned OVERSAMPLING_RATE = 16;
+  localparam logic START_SIG = '0;
+  localparam logic STOP_SIG = '1;
+  localparam logic IDLE_SIG = '1;
 
   function automatic logic calc_parity
   (

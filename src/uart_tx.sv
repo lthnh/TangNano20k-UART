@@ -53,7 +53,7 @@ module uart_tx
       _if.tx_finish <= '0;
       curr_state <= TX_IDLE;
     end
-    if (_if.rst_n && _if.tx_clk)
+    else
       case (curr_state)
         TX_IDLE:
           if (_if.tx_start) begin
@@ -66,7 +66,7 @@ module uart_tx
             latched <= '1;
           end else if (bit_sent_cnt < DATA_FRAME_LEN) begin
             _if.tx <= send_frame[0];
-            bit_sent_cnt <= bit_sent_cnt + 1;
+            bit_sent_cnt <= bit_sent_cnt + 1'b1;
             send_frame <= send_frame >> 1;
           end else begin
             latched <= '0;

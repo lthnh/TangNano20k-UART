@@ -33,14 +33,14 @@ module uart_clk
       _if.rx_clk <= '0;
     end else begin
       if (tx_counter < BIT_PERIOD - 1) begin
-        tx_counter <= tx_counter + 1;
+        tx_counter <= tx_counter + 1'b1;
         _if.tx_clk <= '0;
       end else begin
         tx_counter <= '0;
         _if.tx_clk <= '1;
       end
       if (rx_counter < OVERSAMPLING_BIT_PERIOD - 1) begin
-        rx_counter <= rx_counter + 1;
+        rx_counter <= rx_counter + 1'b1;
         _if.rx_clk <= '0;
       end else begin
         rx_counter <= '0;

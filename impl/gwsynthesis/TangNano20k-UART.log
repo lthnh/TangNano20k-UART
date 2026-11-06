@@ -1,0 +1,32 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\projects\TangNano20k-UART\src\uart_pkg.sv'
+Analyzing Verilog file 'D:\projects\TangNano20k-UART\src\uart_clk.sv'
+Analyzing Verilog file 'D:\projects\TangNano20k-UART\src\uart_if.sv'
+Analyzing Verilog file 'D:\projects\TangNano20k-UART\src\uart_loop.sv'
+Analyzing Verilog file 'D:\projects\TangNano20k-UART\src\uart_rx.sv'
+Analyzing Verilog file 'D:\projects\TangNano20k-UART\src\uart_tx.sv'
+Compiling module 'uart_loop'("D:\projects\TangNano20k-UART\src\uart_loop.sv":1)
+Compiling module 'uart_clk(_if=uart_if_clk_mp)'("D:\projects\TangNano20k-UART\src\uart_clk.sv":1)
+Compiling module 'uart_rx(DATA_WIDTH=32'b00000000000000000000000000001000,PARITY_BIT=0,STOP_WIDTH=32'b00000000000000000000000000000001,_if=uart_if_rx_mp)'("D:\projects\TangNano20k-UART\src\uart_rx.sv":1)
+Compiling module 'uart_tx(DATA_WIDTH=32'b00000000000000000000000000001000,PARITY_BIT=0,STOP_WIDTH=32'b00000000000000000000000000000001,_if=uart_if_tx_mp)'("D:\projects\TangNano20k-UART\src\uart_tx.sv":1)
+NOTE  (EX0101) : Current top module is "uart_loop"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\projects\TangNano20k-UART\impl\gwsynthesis\TangNano20k-UART.vg" completed
+[100%] Generate report file "D:\projects\TangNano20k-UART\impl\gwsynthesis\TangNano20k-UART_syn.rpt.html" completed
+GowinSynthesis finish

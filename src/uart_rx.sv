@@ -156,7 +156,7 @@ module uart_rx
         if (bit_sample_cnt + 1 < OVERSAMPLING_RATE) begin
           oversampling_data <= oversampling_data << 1;
           oversampling_data[0] <= rx_sync;
-          bit_sample_cnt <= bit_sample_cnt + 1;
+          bit_sample_cnt <= bit_sample_cnt + 1'b1;
         end else begin
           if (ones_cnt > zeros_cnt) inferred_bit <= '1;
           else if (ones_cnt < zeros_cnt) inferred_bit <= '0;
@@ -206,7 +206,7 @@ module uart_rx
           if (bit_recv_cnt < DATA_WIDTH) begin
             data <= data >> 1;
             data[DATA_WIDTH-1] <= inferred_bit;
-            bit_recv_cnt <= bit_recv_cnt + 1;
+            bit_recv_cnt <= bit_recv_cnt + 1'b1;
           end
           if (bit_recv_cnt + 1 == DATA_WIDTH) begin
             bit_recv_cnt <= '0;
